@@ -44,7 +44,7 @@ Every product decision has to pass one test: **does it spend a user's executive 
 
 ## Three things I want your gut on before we're too far in
 
-I've written up the case for each of these in the full strategy brief (in the repo, if you want it), but I don't want to lead you there before hearing your unfiltered reaction. In order of importance:
+I've written up the case for each of these in the full strategy brief, but I don't want to lead you there before hearing your unfiltered reaction. In order of importance:
 
 **1. Does "environment-first" feel authentic to how you practice?**
 Not "does it sound like a good marketing frame" — does it feel like a true statement about your clinical work? If it feels performative, we shouldn't build the brand on it. If it feels like a language you already use in different words, we've found something.
@@ -101,5 +101,3 @@ You bought the domains. You've been thinking about this for longer than I have. 
 Excited for Wednesday.
 
 **Alison**
-
-_P.S. — Everything above lives in a private repo at github.com/alisonicole/cue. If you want the full strategy brief (v3), landing page mockup, or design explorations before Wednesday, I'll add you as a collaborator — just send me your GitHub handle._

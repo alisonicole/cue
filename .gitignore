@@ -3,3 +3,7 @@
 .vscode/
 .idea/
 node_modules/
+
+# Private prep / decision docs — never commit
+_private/
+
