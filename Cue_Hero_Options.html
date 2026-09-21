@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cue — Hero design options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Serif:ital@0;1&family=Fraunces:opsz,wght,SOFT@9..144,300..700,50..100&family=Atkinson+Hyperlegible:wght@400;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sage: #8FA285;
+            --sage-deep: #6B7D62;
+            --sage-soft: #C4CFBA;
+            --sage-mist: #DDE3D5;
+            --terracotta: #C97B5C;
+            --terracotta-deep: #A85F42;
+            --terracotta-soft: #E3B39F;
+            --rose: #D4A89E;
+            --rose-soft: #EAD1C7;
+            --honey: #E5C88A;
+            --wheat: #F0E2C4;
+            --cream: #F5EFE4;
+            --cream-warm: #EFE7D7;
+            --charcoal: #2D2A26;
+            --charcoal-soft: #4A4640;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Compare nav */
+        .compare-nav {
+            position: fixed;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            background: rgba(45, 42, 38, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 0.5rem;
+            border-radius: 999px;
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .compare-nav a {
+            color: var(--cream);
+            text-decoration: none;
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            transition: background 200ms ease;
+        }
+
+        .compare-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .option-label {
+            position: sticky;
+            top: 0;
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 0.75rem 3rem;
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            z-index: 50;
+        }
+
+        .option-label span {
+            color: var(--sage-soft);
+            margin-right: 1rem;
+        }
+
+        /* ============================================
+           SHARED HERO SCAFFOLDING
+        ============================================ */
+
+        .hero {
+            min-height: 100vh;
+            padding: 5rem 3rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        header.site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        nav.site-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav.site-nav a {
+            color: var(--charcoal-soft);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        nav.site-nav a:hover {
+            color: var(--sage-deep);
+        }
+
+        .stim-toggle {
+            background: transparent;
+            border: 1px solid var(--sage);
+            color: var(--sage-deep);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            font-family: inherit;
+            display: inline-block;
+            transition: transform 200ms ease, background 200ms ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            border-bottom: 1.5px solid var(--terracotta);
+            padding-bottom: 3px;
+        }
+
+        .subtag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Atkinson Hyperlegible', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================
+           OPTION A — "MEADOW"
+           Warm playful, floating organic shapes,
+           Bricolage Grotesque display, centered
+        ============================================ */
+
+        #meadow {
+            background: var(--cream);
+        }
+
+        #meadow .site-header .logo {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-weight: 600;
+            font-variation-settings: "opsz" 40, "wdth" 90;
+            font-size: 1.75rem;
+            color: var(--charcoal);
+        }
+
+        #meadow .hero-content {
+            text-align: center;
+            max-width: 820px;
+            margin: 2rem auto 0;
+            position: relative;
+        }
+
+        #meadow .badge {
+            background: var(--sage-mist);
+            color: var(--sage-deep);
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            margin-bottom: 2rem;
+        }
+
+        #meadow h1 {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-variation-settings: "opsz" 96, "wdth" 90, "wght" 500;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.75rem;
+            color: var(--charcoal);
+        }
+
+        #meadow h1 .accent {
+            font-style: italic;
+            color: var(--terracotta-deep);
+            font-family: 'Instrument Serif', serif;
+            font-variation-settings: normal;
+            font-weight: 400;
+        }
+
+        #meadow .tagline {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.35rem;
+            color: var(--charcoal-soft);
+            margin-bottom: 2.5rem;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #meadow .cta-row {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #meadow .btn-primary {
+            background: var(--terracotta);
+            color: var(--cream);
+        }
+
+        #meadow .btn-primary:hover {
+            background: var(--terracotta-deep);
+        }
+
+        #meadow .quiet-note {
+            margin-top: 1.75rem;
+            font-size: 0.9rem;
+            color: var(--charcoal-soft);
+            font-style: italic;
+        }
+
+        /* Floating organic shapes */
+        #meadow .float {
+            position: absolute;
+            border-radius: 50% 40% 55% 45%;
+            opacity: 0.55;
+            filter: blur(0.5px);
+        }
+
+        #meadow .float-1 {
+            width: 240px; height: 240px;
+            background: var(--sage);
+            top: 8%; left: -80px;
+            border-radius: 60% 40% 55% 45%;
+        }
+
+        #meadow .float-2 {
+            width: 180px; height: 180px;
+            background: var(--terracotta-soft);
+            top: 20%; right: -40px;
+            border-radius: 50% 60% 40% 50%;
+            opacity: 0.6;
+        }
+
+        #meadow .float-3 {
+            width: 140px; height: 140px;
+            background: var(--honey);
+            bottom: 15%; left: 8%;
+            border-radius: 45% 55% 50% 50%;
+            opacity: 0.5;
+        }
+
+        #meadow .float-4 {
+            width: 200px; height: 200px;
+            background: var(--rose-soft);
+            bottom: 8%; right: 6%;
+            border-radius: 55% 45% 60% 40%;
+            opacity: 0.7;
+        }
+
+        #meadow .float-5 {
+            width: 90px; height: 90px;
+            background: var(--sage-soft);
+            top: 55%; right: 15%;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
+        /* ============================================
+           OPTION B — "STUDIO"
+           Editorial + playful. Asymmetric with color blocks
+           Instrument Serif display, Bricolage accents.
+        ============================================ */
+
+        #studio {
+            background: var(--cream-warm);
+            border-top: 1px solid var(--sage-mist);
+        }
+
+        #studio .site-header .logo {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.9rem;
+            color: var(--charcoal);
+        }
+
+        #studio .hero-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        #studio .subtag {
+            color: var(--sage-deep);
+            margin-bottom: 1.75rem;
+        }
+
+        #studio .subtag::before {
+            content: "";
+            width: 32px;
+            height: 1.5px;
+            background: var(--sage-deep);
+        }
+
+        #studio h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        #studio h1 .underline-accent {
+            position: relative;
+            display: inline-block;
+        }
+
+        #studio h1 .underline-accent::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 12px;
+            background: var(--terracotta-soft);
+            z-index: -1;
+            border-radius: 12px;
+            transform: rotate(-1deg);
+        }
+
+        #studio .tagline {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            font-variation-settings: "opsz" 24, "wdth" 95, "wght" 400;
+            font-size: 1.2rem;
+            color: var(--charcoal-soft);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        #studio .cta-row {
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        #studio .btn-primary {
+            background: var(--sage-deep);
+            color: var(--cream);
+        }
+
+        #studio .btn-primary:hover {
+            background: var(--charcoal);
+        }
+
+        #studio .quiet-note {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--charcoal-soft);
+            font-style: italic;
+        }
+
+        /* Studio visual — color block collage */
+        #studio .visual {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            max-width: 440px;
+            margin-left: auto;
+        }
+
+        #studio .block {
+            position: absolute;
+            border-radius: 24px;
+        }
+
+        #studio .block-1 {
+            width: 65%; height: 55%;
+            background: var(--sage);
+            top: 0; left: 0;
+        }
+
+        #studio .block-2 {
+            width: 50%; height: 45%;
+            background: var(--terracotta);
+            bottom: 0; right: 0;
+        }
+
+        #studio .block-3 {
+            width: 40%; height: 40%;
+            background: var(--wheat);
+            top: 30%; right: 10%;
+            border-radius: 50%;
+        }
+
+        #studio .dot-pattern {
+            position: absolute;
+            bottom: 15%; left: 15%;
+            width: 100px; height: 100px;
+            background-image: radial-gradient(var(--charcoal) 1.5px, transparent 1.5px);
+            background-size: 12px 12px;
+            opacity: 0.3;
+        }
+
+        /* ============================================
+           OPTION C — "CERAMIC"
+           Warm cozy, big rounded color washes,
+           DM Serif Display, homey feeling
+        ============================================ */
+
+        #ceramic {
+            background: linear-gradient(180deg, var(--wheat) 0%, var(--cream) 100%);
+            border-top: 1px solid var(--sage-mist);
+        }
+
+        #ceramic .site-header .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--terracotta-deep);
+        }
+
+        #ceramic .hero-content {
+            max-width: 900px;
+            margin: 2rem auto 0;
+            text-align: center;
+            position: relative;
+        }
+
+        #ceramic .subtag {
+            color: var(--terracotta-deep);
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        #ceramic .subtag .swash {
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            letter-spacing: 0;
+            text-transform: none;
+            color: var(--terracotta-deep);
+            font-weight: 400;
+        }
+
+        #ceramic h1 {
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            font-size: clamp(3rem, 6.5vw, 5.25rem);
+            line-height: 1.05;
+            letter-spacing: -0.015em;
+            color: var(--charcoal);
+            margin-bottom: 1.75rem;
+        }
+
+        #ceramic h1 em {
+            font-family: 'DM Serif Display', serif;
+            font-style: italic;
+            color: var(--sage-deep);
+        }
+
+        #ceramic .tagline {
+            font-size: 1.2rem;
+            color: var(--charcoal-soft);
+            margin-bottom: 2.75rem;
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.55;
+        }
+
+        #ceramic .cta-row {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        #ceramic .btn-primary {
+            background: var(--terracotta-deep);
+            color: var(--cream);
+        }
+
+        #ceramic .btn-primary:hover {
+            background: var(--charcoal);
+        }
+
+        #ceramic .quiet-note {
+            font-size: 0.9rem;
+            color: var(--charcoal-soft);
+            font-style: italic;
+        }
+
+        /* Ceramic bowls / rounded shapes at bottom */
+        #ceramic .bowls {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 4rem;
+            align-items: flex-end;
+        }
+
+        #ceramic .bowl {
+            border-radius: 0 0 50% 50% / 0 0 60% 60%;
+        }
+
+        #ceramic .bowl-1 {
+            width: 180px; height: 140px;
+            background: var(--sage);
+            opacity: 0.9;
+        }
+
+        #ceramic .bowl-2 {
+            width: 220px; height: 180px;
+            background: var(--terracotta);
+        }
+
+        #ceramic .bowl-3 {
+            width: 160px; height: 130px;
+            background: var(--honey);
+            opacity: 0.85;
+        }
+
+        #ceramic .bowl-4 {
+            width: 140px; height: 110px;
+            background: var(--rose);
+            opacity: 0.85;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero { padding: 4rem 1.5rem 3rem; }
+            header.site-header { flex-direction: row; margin-bottom: 3rem; }
+            nav.site-nav { gap: 0.75rem; }
+            nav.site-nav a:not(.stim-toggle) { display: none; }
+            #studio .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+            #studio .visual { max-width: 320px; margin: 0 auto; }
+            #ceramic .bowls { gap: 0.75rem; flex-wrap: wrap; }
+            #ceramic .bowl-1, #ceramic .bowl-2, #ceramic .bowl-3, #ceramic .bowl-4 {
+                width: 80px; height: 65px;
+            }
+            .option-label { padding: 0.75rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="compare-nav">
+        <a href="#meadow">A · Meadow</a>
+        <a href="#studio">B · Studio</a>
+        <a href="#ceramic">C · Ceramic</a>
+    </div>
+
+    <!-- ========================================
+         OPTION A — MEADOW
+    ======================================== -->
+    <div class="option-label"><span>Option A</span> Meadow — warm & playful, floating organic shapes</div>
+    <section id="meadow" class="hero">
+        <div class="float float-1"></div>
+        <div class="float float-2"></div>
+        <div class="float float-3"></div>
+        <div class="float float-4"></div>
+        <div class="float float-5"></div>
+
+        <div class="hero-inner">
+            <header class="site-header">
+                <div class="logo">Cue</div>
+                <nav class="site-nav">
+                    <a href="#">Community</a>
+                    <a href="#">Our approach</a>
+                    <a href="#">Our story</a>
+                    <button class="stim-toggle">Low-stim mode</button>
+                </nav>
+            </header>
+
+            <div class="hero-content">
+                <span class="subtag badge">A different kind of ADHD & autism support · built by women, for women</span>
+                <h1>Designed for the way your brain <span class="accent">actually</span> works.</h1>
+                <p class="tagline">
+                    A calm, women-first space for ADHD, autism, and everything in between. We design environments that fit your brain, so you can stop white-knuckling a world that doesn't.
+                </p>
+                <div class="cta-row">
+                    <a href="#" class="btn-primary">Join the waitlist</a>
+                    <a href="#" class="btn-secondary">See how this is different</a>
+                </div>
+                <p class="quiet-note">No diagnosis required · No clickbait · No streaks or scores</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         OPTION B — STUDIO
+    ======================================== -->
+    <div class="option-label"><span>Option B</span> Studio — editorial with playful accents, asymmetric</div>
+    <section id="studio" class="hero">
+        <div class="hero-inner">
+            <header class="site-header">
+                <div class="logo">Cue</div>
+                <nav class="site-nav">
+                    <a href="#">Community</a>
+                    <a href="#">Our approach</a>
+                    <a href="#">Our story</a>
+                    <button class="stim-toggle">Low-stim mode</button>
+                </nav>
+            </header>
+
+            <div class="hero-grid">
+                <div>
+                    <span class="subtag">A different kind of support · built by women, for women</span>
+                    <h1>Designed for the way your <span class="underline-accent">brain</span> actually works.</h1>
+                    <p class="tagline">
+                        A calm, women-first space for ADHD, autism, and everything in between. We design environments that fit your brain, so you can stop white-knuckling a world that doesn't.
+                    </p>
+                    <div class="cta-row">
+                        <a href="#" class="btn-primary">Join the waitlist</a>
+                        <a href="#" class="btn-secondary">See how this is different</a>
+                    </div>
+                    <p class="quiet-note">No diagnosis required · No clickbait · No streaks or scores</p>
+                </div>
+                <div class="visual" aria-hidden="true">
+                    <div class="block block-1"></div>
+                    <div class="block block-2"></div>
+                    <div class="block block-3"></div>
+                    <div class="dot-pattern"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         OPTION C — CERAMIC
+    ======================================== -->
+    <div class="option-label"><span>Option C</span> Ceramic — cozy & handcrafted, warm color washes</div>
+    <section id="ceramic" class="hero">
+        <div class="hero-inner">
+            <header class="site-header">
+                <div class="logo">Cue</div>
+                <nav class="site-nav">
+                    <a href="#">Community</a>
+                    <a href="#">Our approach</a>
+                    <a href="#">Our story</a>
+                    <button class="stim-toggle">Low-stim mode</button>
+                </nav>
+            </header>
+
+            <div class="hero-content">
+                <span class="subtag"><span class="swash">A different kind of ADHD & autism support, built by women, for women</span></span>
+                <h1>Designed for the way<br>your brain <em>actually</em> works.</h1>
+                <p class="tagline">
+                    A calm, women-first space for ADHD, autism, and everything in between. We design environments that fit your brain, so you can stop white-knuckling a world that doesn't.
+                </p>
+                <div class="cta-row">
+                    <a href="#" class="btn-primary">Join the waitlist</a>
+                    <a href="#" class="btn-secondary">See how this is different</a>
+                </div>
+                <p class="quiet-note">No diagnosis required · No clickbait · No streaks or scores</p>
+
+                <div class="bowls" aria-hidden="true">
+                    <div class="bowl bowl-1"></div>
+                    <div class="bowl bowl-2"></div>
+                    <div class="bowl bowl-3"></div>
+                    <div class="bowl bowl-4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
