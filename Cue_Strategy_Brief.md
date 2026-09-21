@@ -8,6 +8,13 @@ _Revised: expanded from ADHD-only to neurodivergent women (ADHD + autism + AuDHD
 
 **Cue exists to help neurodivergent women stop white-knuckling their lives — by designing environments that fit how their brains actually work, and building community with women who get it.**
 
+## The premise, in one quote
+
+> _"Every time you rely on your memory to hold something in your brain, you're spending executive function that you simply cannot spare."_
+> — Sasha Hamdani, MD, ADHD psychiatrist
+
+This is the entire scientific thesis behind Cue. ADHD and autism aren't willpower problems, they're executive-function economies operating under scarcity. Every cognitive load we ask a neurodivergent brain to carry (remembering the appointment, deciding what's for dinner, tracking the emotional thread of a conversation, holding the next step in mind) is a withdrawal from a bank account that's already overdrawn. Environment-first is the mathematical response: externalize the load, spare the executive function for what actually matters. Every product decision Cue makes should be measured against this: does it spend a user's executive function, or save it?
+
 ## The opportunity, in one paragraph
 
 The scientific and cultural consensus is moving fast toward a spectrum view of neurodivergence: ADHD, autism, and their overlap (AuDHD) are no longer treated as clean, separate categories. Roughly 40% of autistic adults also meet ADHD criteria, and among autistic adults with comorbid ADHD, 71% are women. These women share a common experience: late diagnosis, years of masking, disproportionate anxiety and depression, menstrual-cycle-linked symptom variability, and a diagnostic system that was built around boys. DSM-6 (targeted for ~2029) is expected to move toward a dimensional Alternative Model for Neurodevelopmental Disorders, formally recognizing what clinicians already see: these are overlapping traits, not tidy diagnoses. Meanwhile, existing tools fail this population — Inflow is now inside a medicalized telehealth funnel, Shimmer costs $140+/mo, therapy is waitlisted, and every option leads with "manage your symptoms" language that the neurodiversity community actively rejects. That's the gap.
